@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mazin Mohammad Sayeed · Data Analyst</title>
+<meta name="description" content="Data analyst portfolio: SQL, Python, product and business analytics, GenAI.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700;800&family=IBM+Plex+Sans:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0b1a26;--bg2:#10283a;--card:#12293b;--line:#24435a;--tx:#e8eff4;--mut:#93a9b8;--a:#4fd1c5;--b:#f2c14e;--r:14px;
+--disp:"Bricolage Grotesque","Segoe UI",system-ui,sans-serif;--body:"IBM Plex Sans","Segoe UI",system-ui,sans-serif}
+:root[data-theme="light"]{--bg:#f1f5f8;--bg2:#e3ebf1;--card:#fff;--line:#c9d6e0;--tx:#10212e;--mut:#4f6676;--a:#0f8f84;--b:#b27a00}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--body);background:var(--bg);color:var(--tx);line-height:1.6;overflow-x:hidden;
+background-image:radial-gradient(ellipse 60% 40% at 15% 0%,color-mix(in srgb,var(--a) 22%,transparent),transparent),
+radial-gradient(ellipse 50% 40% at 90% 20%,color-mix(in srgb,var(--b) 16%,transparent),transparent),
+linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);
+background-size:auto,auto,48px 48px,48px 48px;background-attachment:fixed}
+body::after{content:"";position:fixed;inset:0;pointer-events:none;background:radial-gradient(circle 260px at var(--mx,50%) var(--my,30%),color-mix(in srgb,var(--a) 14%,transparent),transparent)}
+.wrap{max-width:1040px;margin:0 auto;padding:0 20px}
+nav{position:sticky;top:0;z-index:5;backdrop-filter:blur(10px);background:color-mix(in srgb,var(--bg) 78%,transparent);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;align-items:center;gap:18px;height:56px}
+nav b{font-family:var(--disp);font-size:1.05rem;margin-right:auto}
+nav a{color:var(--mut);text-decoration:none;font-size:.92rem}nav a:hover{color:var(--tx)}
+button{font:inherit;color:inherit;cursor:pointer}
+.theme{background:none;border:1px solid var(--line);border-radius:99px;padding:4px 12px;color:var(--mut)}
+:focus-visible{outline:2px solid var(--a);outline-offset:3px}
+header.hero{padding:72px 0 40px}
+.hero h1{font-family:var(--disp);font-weight:800;font-size:clamp(2.3rem,6vw,4.2rem);line-height:1.05;letter-spacing:-.02em;max-width:15ch}
+.hero p.lead{color:var(--mut);max-width:58ch;margin:18px 0 28px;font-size:1.08rem}
+.links{display:flex;gap:10px;flex-wrap:wrap}
+.btn{padding:9px 18px;border-radius:99px;border:1px solid var(--line);text-decoration:none;color:var(--tx);font-weight:500;background:var(--card)}
+.btn.p{background:var(--a);color:#06231f;border-color:var(--a)}
+.kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:14px;margin-top:46px}
+.kpi{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:18px}
+.kpi .n{font-family:var(--disp);font-weight:800;font-size:2.4rem;color:var(--a);line-height:1}
+.kpi:nth-child(even) .n{color:var(--b)}
+.kpi span{display:block;color:var(--mut);font-size:.9rem;margin-top:8px}
+section{padding:54px 0}
+h2{font-family:var(--disp);font-size:clamp(1.6rem,3.4vw,2.2rem);letter-spacing:-.01em;margin-bottom:6px}
+.sub{color:var(--mut);margin-bottom:22px;max-width:62ch}
+.tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:16px}
+.tab,.chip{background:var(--card);border:1px solid var(--line);border-radius:99px;padding:6px 16px;color:var(--mut)}
+.tab[aria-selected=true],.chip[aria-pressed=true]{background:var(--a);color:#06231f;border-color:var(--a);font-weight:500}
+.panel{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:22px}
+.panel h3{font-family:var(--disp);font-size:1.2rem}
+.panel .ctx{color:var(--mut);font-size:.95rem;margin:4px 0 18px}
+.m{margin:14px 0}
+.m .row{display:flex;justify-content:space-between;gap:10px;font-size:.95rem}
+.m .row b{color:var(--b);font-weight:500;white-space:nowrap}
+.bar{height:10px;background:var(--bg2);border-radius:99px;margin-top:6px;overflow:hidden}
+.bar i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--a),var(--b));border-radius:99px;transition:width .9s cubic-bezier(.2,.8,.2,1)}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:14px}
+.proj{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:20px;display:flex;flex-direction:column;gap:10px}
+.proj h3{font-family:var(--disp);font-size:1.12rem}
+.proj p{color:var(--mut);font-size:.93rem}
+.tags{display:flex;gap:6px;flex-wrap:wrap}
+.tags span{font-size:.78rem;border:1px solid var(--line);border-radius:6px;padding:1px 8px;color:var(--mut)}
+.st{font-size:.8rem;color:var(--b)}
+.proj a{color:var(--a);font-size:.92rem;margin-top:auto}
+.proj.hide{display:none}
+.heat{display:grid;grid-template-columns:60px repeat(6,1fr);gap:3px;margin:14px 0 8px;font-size:.78rem}
+.heat div{padding:7px 0;text-align:center;border-radius:4px}
+.heat .h{color:var(--mut)}
+.heat .c{cursor:pointer;color:#06231f;font-weight:500}
+.readout{min-height:1.6em;color:var(--mut);font-size:.9rem}
+.skills{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px}
+.skills div{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:16px}
+.skills h3{font-size:.95rem;margin-bottom:8px;font-family:var(--disp)}
+footer{padding:40px 0 60px;border-top:1px solid var(--line);color:var(--mut);font-size:.9rem}
+@media (prefers-reduced-motion:reduce){.bar i{transition:none}html{scroll-behavior:auto}}
+@media (max-width:560px){nav a.x{display:none}}
+</style>
+</head>
+<body>
+<nav><div class="wrap"><b>Mazin M. Sayeed</b>
+<a class="x" href="#impact">Impact</a><a class="x" href="#projects">Projects</a><a class="x" href="#skills">Skills</a><a href="#contact">Contact</a>
+<button class="theme" id="theme" aria-label="Switch colour theme">Light</button></div></nav>
+
+<header class="hero"><div class="wrap">
+<h1>I turn messy data into decisions people act on.</h1>
+<p class="lead">Data analyst with two years in consulting, working on analytics for Google and Adobe. I build SQL pipelines, dashboards, and analysis that business teams use. Now building open projects in product analytics and GenAI.</p>
+<div class="links">
+<a class="btn p" href="#projects">See projects</a>
+<a class="btn" href="https://github.com/YOUR_GITHUB_USERNAME" rel="noopener">GitHub</a>
+<a class="btn" href="https://www.linkedin.com/in/YOUR_LINKEDIN_HANDLE" rel="noopener">LinkedIn</a>
+</div>
+<div class="kpis" aria-label="Career highlights">
+<div class="kpi"><div class="n" data-t="99.99" data-d="2" data-s="%">0</div><span>smaller final table at Adobe (500M to 40K rows)</span></div>
+<div class="kpi"><div class="n" data-t="97" data-s="%">0</div><span>faster dashboard refresh (3 hours to 5 minutes)</span></div>
+<div class="kpi"><div class="n" data-t="100" data-s="+">0</div><span>P0 to P4 incidents resolved for Google</span></div>
+<div class="kpi"><div class="n" data-t="80" data-s="%">0</div><span>less manual layout validation, Spirit Halloween</span></div>
+</div>
+</div></header>
+
+<section id="impact"><div class="wrap">
+<h2>Impact explorer</h2>
+<p class="sub">Pick a client engagement to see what changed.</p>
+<div class="tabs" role="tablist" id="tabs"></div>
+<div class="panel" id="panel" role="tabpanel"></div>
+</div></section>
+
+<section id="projects"><div class="wrap">
+<h2>Projects</h2>
+<p class="sub">Filter by skill. In-progress work is marked, and each card links to its repository.</p>
+<div class="tabs" id="chips"></div>
+<div class="grid" id="grid"></div>
+<div class="panel" style="margin-top:22px">
+<h3>Preview: cohort retention view</h3>
+<p class="ctx">Sample data showing the layout I’m building for the Olist project. It will be replaced with real results when the analysis is done. Hover or tap a cell.</p>
+<div class="heat" id="heat"></div>
+<div class="readout" id="readout" aria-live="polite">Select a cell to read it.</div>
+</div>
+</div></section>
+
+<section id="skills"><div class="wrap">
+<h2>Toolkit</h2>
+<p class="sub">What I use day to day, grouped by job to be done.</p>
+<div class="skills">
+<div><h3>Query and model</h3>SQL (advanced), Databricks, ETL, data modeling, DuckDB</div>
+<div><h3>Analyze</h3>Python (Pandas, NumPy), cohort and attribution analysis, KPI design, root cause analysis</div>
+<div><h3>Report</h3>Power BI, Tableau, Looker, Excel and Google Sheets, executive dashboards</div>
+<div><h3>Build with AI</h3>NLP and embeddings, semantic search, computer vision (YOLOv8), RAG (in progress)</div>
+</div>
+</div></section>
+
+<footer id="contact"><div class="wrap">
+<h2 style="font-size:1.4rem">Let’s talk</h2>
+<p class="sub" style="margin-bottom:10px">Open to data analyst, product analyst, and BI roles.</p>
+<a class="btn p" href="mailto:YOUR_EMAIL@example.com">Send an email</a>
+<p style="margin-top:22px">Based in Chennai, India. Replace the placeholder links in this file with your own.</p>
+</div></footer>
+
+<script>
+// ---- editable content ----
+const IMPACT=[
+{id:"Adobe",h:"Adobe · Digital Media and Marketing Analytics",c:"Optimised Databricks ETL and SQL models on 500M+ records and owned the executive dashboard.",
+ m:[{l:"Reduction in final table size",v:99.99,t:"500M to 40K rows"},{l:"Reduction in dashboard refresh time",v:97,t:"3 hours to 5 minutes"}]},
+{id:"Google",h:"Google · Revenue Operations",c:"Refactored production SQL pipelines and ran root cause analysis on data discrepancies.",
+ m:[{l:"Client satisfaction",v:90,t:"4.5 of 5 or higher"},{l:"Incidents resolved (P0 to P4)",v:100,t:"100+"}]},
+{id:"Spirit Halloween",h:"Spirit Halloween · Retail Spatial Intelligence",c:"Built a YOLOv8 planogram compliance tool with a Streamlit app on Azure.",
+ m:[{l:"Reduction in manual layout validation",v:80,t:"80%"}]}];
+const PROJECTS=[
+{n:"Olist e-commerce product analytics",d:"Funnel, cohort retention, RFM segments, and an A/B test analysis on 100K orders.",t:["SQL","Python","Dashboards"],s:"In progress",u:"https://github.com/YOUR_GITHUB_USERNAME/olist-product-analytics"},
+{n:"Fintech and lending analytics",d:"Default drivers, customer segmentation, and a KPI dashboard with an Excel summary.",t:["SQL","Python","Dashboards"],s:"Planned",u:"#"},
+{n:"RAG assistant for financial reports",d:"Ask questions about public annual reports using free, open-source models.",t:["Python","GenAI"],s:"Planned",u:"#"},
+{n:"Customer churn prediction",d:"Random forest model with RFM features to flag customers likely to leave.",t:["Python"],s:"Complete",u:"https://github.com/YOUR_GITHUB_USERNAME"}];
+
+// ---- helpers ----
+const $=s=>document.querySelector(s), reduce=matchMedia("(prefers-reduced-motion:reduce)").matches;
+// theme
+const root=document.documentElement, tb=$("#theme");
+tb.onclick=()=>{const l=root.dataset.theme==="light";root.dataset.theme=l?"":"light";tb.textContent=l?"Light":"Dark"};
+// cursor glow
+addEventListener("pointermove",e=>{root.style.setProperty("--mx",e.clientX+"px");root.style.setProperty("--my",e.clientY+"px")});
+// KPI counters
+document.querySelectorAll(".n").forEach(el=>{
+ const t=+el.dataset.t,d=+(el.dataset.d||0),s=el.dataset.s||"";
+ if(reduce){el.textContent=t.toFixed(d)+s;return}
+ let st=null;const step=ts=>{st??=ts;const p=Math.min((ts-st)/1400,1),e=1-Math.pow(1-p,3);
+  el.textContent=(t*e).toFixed(d)+s;if(p<1)requestAnimationFrame(step)};requestAnimationFrame(step)});
+// impact explorer
+const tabs=$("#tabs"),panel=$("#panel");
+function showImpact(i){
+ [...tabs.children].forEach((b,j)=>b.setAttribute("aria-selected",i===j));
+ const x=IMPACT[i];
+ panel.innerHTML=`<h3>${x.h}</h3><p class="ctx">${x.c}</p>`+x.m.map(m=>
+  `<div class="m"><div class="row"><span>${m.l}</span><b>${m.t}</b></div><div class="bar"><i data-w="${m.v}"></i></div></div>`).join("");
+ requestAnimationFrame(()=>requestAnimationFrame(()=>panel.querySelectorAll("i").forEach(b=>b.style.width=b.dataset.w+"%")));
+}
+IMPACT.forEach((x,i)=>{const b=document.createElement("button");b.className="tab";b.role="tab";b.textContent=x.id;b.onclick=()=>showImpact(i);tabs.append(b)});
+showImpact(0);
+// project filters
+const chips=$("#chips"),grid=$("#grid");let cur="All";
+["All",...new Set(PROJECTS.flatMap(p=>p.t))].forEach(f=>{const b=document.createElement("button");b.className="chip";b.textContent=f;
+ b.setAttribute("aria-pressed",f==="All");b.onclick=()=>{cur=f;[...chips.children].forEach(c=>c.setAttribute("aria-pressed",c===b));
+ [...grid.children].forEach((c,i)=>c.classList.toggle("hide",!(f==="All"||PROJECTS[i].t.includes(f))))};chips.append(b)});
+grid.innerHTML=PROJECTS.map(p=>`<article class="proj"><span class="st">${p.s}</span><h3>${p.n}</h3><p>${p.d}</p>
+<div class="tags">${p.t.map(t=>`<span>${t}</span>`).join("")}</div><a href="${p.u}" rel="noopener">View repository</a></article>`).join("");
+// sample cohort heatmap (illustrative values)
+const heat=$("#heat"),ro=$("#readout");
+heat.innerHTML='<div class="h">Cohort</div>'+[0,1,2,3,4,5].map(m=>`<div class="h">M${m}</div>`).join("");
+["Jan","Feb","Mar","Apr","May","Jun"].forEach((c,r)=>{
+ heat.insertAdjacentHTML("beforeend",`<div class="h">${c}</div>`);
+ for(let m=0;m<6;m++){
+  if(r+m>5){heat.insertAdjacentHTML("beforeend","<div></div>");continue}
+  const v=m===0?100:Math.max(4,Math.round(34*Math.pow(.62,m-1)+Math.sin(r*2+m)*2));
+  const d=document.createElement("div");d.className="c";d.textContent=v+"%";
+  d.style.background=`color-mix(in srgb,var(--a) ${Math.max(14,v)}%,var(--bg2))`;
+  const say=()=>ro.textContent=`${c} cohort, month ${m}: ${v}% of customers still active (sample data).`;
+  d.onmouseenter=say;d.onclick=say;d.tabIndex=0;d.onfocus=say;heat.append(d)}});
+</script>
+</body>
+</html>
